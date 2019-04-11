@@ -1,0 +1,27 @@
+<button ui-sref="app.createPerson" type="button" class="pull-right btn btn-primary">
+    Create Person
+</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Telefone</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="person in vm.people">
+      <td>
+        <button ui-sref="app.editPerson({personId: person.$id})" class="btn btn-link">{{person.$id}}</button>
+      </td>  
+      <td>{{person.name}}</td>
+      <td>{{person.email}}</td>
+      <td>{{person.tel}}</td>
+      <td>
+        <button ng-click="vm.remove(person)" class="btn btn-link">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
